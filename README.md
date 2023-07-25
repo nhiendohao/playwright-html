@@ -1,6 +1,6 @@
 <div align="center">
 
-![](/assets/logo.png "playwright-html-report")
+![](https://i.ibb.co/D9xqNLC/logo.png "playwright-html-report")
 
 <br>
 
@@ -92,13 +92,13 @@ Open the URL in the browser to see the HTML report
 
 
 ## Dasboard
-![](/assets/dashboard.png)
+![](https://i.ibb.co/2MYN2xy/dashboard.png)
 
 ## Test List
-![](/assets/test_list.png)
+![](https://i.ibb.co/RD53fN1/test-list.png)
 
 ## Test Details
-![](/assets/test_details.png)
+![](https://i.ibb.co/qNPr9Xw/test-details.png)
 
 ## License
 
