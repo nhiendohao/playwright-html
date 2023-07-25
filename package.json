@@ -1,6 +1,6 @@
 {
   "name": "playwright-html",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HTML report for Playwright",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,7 +37,8 @@
   },
   "homepage": "https://gitlab.com/rodrigoodhin/playwright-html/-/blob/main/README.md?ref_type=heads",
   "devDependencies": {
-    "@playwright/test": "^1.30.0"
+    "@playwright/test": "^1.30.0",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@node-minify/clean-css": "^8.0.6",
