@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+		"resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ES2020",
+    "module": "commonjs",
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnusedLabels": true, 
+    "allowUnreachableCode": true,
+    "skipLibCheck": true,
+        
+    "outDir": "./lib",
+    "declaration": true,
+    "lib": [
+      "ES2021.String",
+      "dom",
+      "dom.iterable",
+    ]
+  },
+  "include": ["./src"]
+}

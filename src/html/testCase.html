@@ -1,0 +1,113 @@
+<tr class="{{.TRClassesCss}}">
+	<td class="{{.TDClassesCss}}">{{.Title}}</td>
+	<td class="text-capitalize {{.TDClassesCss}}">{{.Status}}</td>
+	<td class="{{.TDClassesCss}}">{{.File}}</td>
+	<td class="{{.TDClassesCss}}">{{.Browser}}</td>
+	<td class="{{.TDClassesCss}}">{{.Duration}}</td>
+	<td class="{{.TDClassesCss}}" >
+		<a
+			href="#"
+			class="odhin-btn"
+			data-bs-toggle="modal"
+			data-bs-target="#{{.ModalID}}"
+			onclick="showHideScroll('hide')"
+			><span class="material-icons">read_more</span></a
+		>
+
+		<div
+			class="modal fade"
+			id="{{.ModalID}}"
+			tabindex="-1"
+			aria-labelledby="{{.ModalID}}Label"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header result-header">
+						<h1 class="modal-title fs-5" id="{{.ModalID}}Label"><label class="text-capitalize {{.ModalHeaderClassesCss}}">{{.ModalHeaderStatus}}</label>{{.Title}}</h1>
+						<span
+							type="button"
+							class="close-btn"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+							onclick="showHideScroll('show')"
+						>X</span>
+					</div>
+					<div class="modal-body odhin-bg-very-dark">
+						<div class="container-xxl">
+
+
+							<div class="accordion accordion-flush mt-3 mb-3 shadow" id="accordionPanelsInfo">
+								<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-info-{{.ModalID}}" aria-expanded="true" aria-controls="panel-collapse-info-{{.ModalID}}">
+										Run Info
+									</button>
+								</h2>
+								<div id="panel-collapse-info-{{.ModalID}}" class="accordion-collapse collapse show">
+									<div class="accordion-body">
+										<div class="container-fluid">
+											<div class="row m-0 p-0">
+												<div class="col m-0 p-0">
+													<div class="table-responsive">
+														<table class="table table-sm table-borderless mb-0 testcase-run-info-table">
+															<tr>
+																<th class="odhin-text">Filename</th>
+																<td class="text-secondary-emphasis fst-italic">{{.InfoFilename}}</td>
+															</tr>
+															<tr>
+																<th class="odhin-text fst-italic">Browser</th>
+																<td class="text-secondary-emphasis fst-italic">{{.InfoBrowser}}</td>
+															</tr>
+															<tr>
+																<th class="odhin-text">Execution Start Time</th>
+																<td class="text-secondary-emphasis fst-italic">{{.InfoStartTime}}</td>
+															</tr>
+															<tr>
+																<th class="odhin-text">Total Execution Time</th>
+																<td class="text-secondary-emphasis fst-italic">{{.InfoTotalExecutionTime}}</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+
+							{{.Errors}}
+
+							<div class="accordion accordion-flush mt-3 mb-3 shadow" id="accordionPanelsSteps">
+								<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-steps-{{.ModalID}}" aria-expanded="true" aria-controls="panel-collapse-steps-{{.ModalID}}">
+										Steps
+									</button>
+								</h2>
+								<div id="panel-collapse-steps-{{.ModalID}}" class="accordion-collapse collapse show">
+									<div class="accordion-body">
+										{{.Steps}}
+									</div>
+								</div>
+								</div>
+							</div>
+
+							{{.Screenshots}}
+							{{.Videos}}
+							{{.Trace}}
+							{{.Stdout}}
+							{{.Stderr}}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</td>
+</tr>
+
+

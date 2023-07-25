@@ -1,0 +1,133 @@
+let options = {
+        segmentShowStroke: false,
+        responsive: false,
+        layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 10,
+                bottom: 0
+            }
+        },
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    display: false
+                },
+                scaleLabel: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    display: false
+                },
+            }]
+        },
+        legend: {
+            display: false,
+        },
+        animation: {
+            duration: 2200
+        },
+        tooltips: {
+            callbacks: {
+                label: function (tooltipItem, data) {
+                    //get the concerned dataset
+                    let dataset = data.datasets[tooltipItem.datasetIndex];
+                    //calculate the total of this data set
+                    let total = dataset.data.reduce(function (previousValue, currentValue, currentIndex, array) {
+                        return previousValue + currentValue;
+                    });
+                    //get the current items value
+                    let currentValue = dataset.data[tooltipItem.index];
+                    //get the current items label
+                    let currentLabel = data.labels[tooltipItem.index];
+                    //calculate the percentage based on the total and current item, also this does a rough rounding to give a whole number
+                    let percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+
+                    return " " + currentLabel + " " + percentage + "%";
+                }
+            }
+        },
+        title: {
+            display: false,
+        }
+    }
+
+    let statusPassed = "{{.PassedStatusChart}}"
+    let statusFailed = "{{.FailedStatusChart}}"
+    let statusTimedOut = "{{.TimedOutStatusChart}}"
+    let statusSkipped = "{{.SkippedStatusChart}}"
+    let statusInterrupted = "{{.InterruptedStatusChart}}"
+    let ctxStatus = document.getElementById('chart-status').getContext('2d');
+    let chartStatus = new Chart(ctxStatus, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Passed ({{.PassedStatusChart}})', 
+                'Failed ({{.FailedStatusChart}})', 
+                'TimedOut ({{.TimedOutStatusChart}})', 
+                'Skipped ({{.SkippedStatusChart}})', 
+                'Interrupted ({{.InterruptedStatusChart}})'
+            ],
+            datasets: [{
+                data: [
+                    parseInt(statusPassed),
+                    parseInt(statusFailed),
+                    parseInt(statusTimedOut),
+                    parseInt(statusSkipped),
+                    parseInt(statusInterrupted)
+                ],
+                backgroundColor: [
+                    '#2E7D31',
+                    '#C62828',
+                    '#fcd12a',
+                    '#ff6f00',
+                    '#01579b'
+                ],
+                borderColor: [
+                    '#2E7D31',
+                    '#C62828',
+                    '#fcd12a',
+                    '#ff6f00',
+                    '#01579b'
+                ]
+            }]
+        },
+        options: options
+    });
+
+    let ctxFile = document.getElementById('chart-file').getContext('2d');
+    let chartFile = new Chart(ctxFile, {
+        type: 'doughnut',
+        data: {
+            labels: [ {{.FilesChartLabels}} ],
+            datasets: [{
+                data: [ {{.FilesChartData}} ],
+                backgroundColor: [ {{.FilesChartDataColor}} ],
+                borderColor: [ {{.FilesChartDataColor}} ]
+            }]
+        },
+        options: options
+    });
+
+    let ctxBrowser = document.getElementById('chart-browser').getContext('2d');
+    let chartBrowser = new Chart(ctxBrowser, {
+        type: 'doughnut',
+        data: {
+            labels: [ {{.BrowsersChartLabels}} ],
+            datasets: [{
+                data: [ {{.BrowsersChartData}} ],
+                backgroundColor: [ {{.BrowsersChartDataColor}} ],
+                borderColor: [ {{.BrowsersChartDataColor}} ]
+            }]
+        },
+        options: options
+    });

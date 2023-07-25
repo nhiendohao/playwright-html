@@ -1,0 +1,71 @@
+<div
+	class="accordion accordion-flush mt-3 mb-3 shadow"
+	id="accordionPanelsRunInfo"
+>
+	<div class="accordion-item">
+		<h2 class="accordion-header">
+			<button
+				class="accordion-button"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#panel-collapse-run-info"
+				aria-expanded="true"
+				aria-controls="panel-collapse-run-info"
+			>
+				Run info
+			</button>
+		</h2>
+		<div id="panel-collapse-run-info" class="accordion-collapse collapse show">
+			<div class="accordion-body odhin-table">
+				<div class="container-fluid">
+					<div class="row m-0 p-0">
+						<div class="col m-0 p-0">
+							<div class="table-responsive text-start">
+								<table
+									class="table table-sm table-borderless mb-0 testcase-run-info-table"
+								>
+									<tr>
+										<th class="odhin-text">Project</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.Project}}
+										</td>
+									</tr>
+									<tr>
+										<th class="odhin-text fst-italic">Release</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.Release}}
+										</td>
+									</tr>
+									<tr>
+										<th class="odhin-text fst-italic">Test Environment</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.TestEnvironment}}
+										</td>
+									</tr>
+									<tr>
+										<th class="odhin-text">Execution Start Time</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.StartTime}}
+										</td>
+									</tr>
+									<tr>
+										<th class="odhin-text">Execution End Time</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.EndTime}}
+										</td>
+									</tr>
+									<tr>
+										<th class="odhin-text">Total Execution Time</th>
+										<td class="text-secondary-emphasis fst-italic">
+											{{.TotalExecutionTime}}
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

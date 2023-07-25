@@ -1,0 +1,40 @@
+<div class="accordion accordion-flush mt-3 mb-5 shadow" id="accordionPanelsTests">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-tests" aria-expanded="true" aria-controls="panel-collapse-tests">
+            Overview
+        </button>
+      </h2>
+      <div id="panel-collapse-tests" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+            <div class="table-responsive">
+                <table id="test-list-table" class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>File</th>
+                            <th>Browser</th>
+                            <th>Duration</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{.TestCases}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>File</th>
+                            <th>Browser</th>
+                            <th>Duration</th>
+                            <th>Details</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

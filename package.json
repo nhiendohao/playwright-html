@@ -1,0 +1,77 @@
+{
+  "name": "playwright-html",
+  "version": "0.1.0",
+  "description": "HTML report for Playwright",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "version": "npm run format",
+    "build": "tsc",
+    "release:ci": "npm run release -- --ci --npm.skipChecks --no-git.requireCleanWorkingDir",
+    "release:patch": "npm run release -- patch",
+    "release:minor": "npm run release -- minor",
+    "release:major": "npm run release -- major",
+    "format": "prettier --write \"(src|tests)/*.(ts)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:rodrigoodhin/playwright-html.git"
+  },
+  "keywords": [
+    "playwright",
+    "report",
+    "reporter",
+    "typescript",
+    "javascript",
+    "test",
+    "tools"
+  ],
+  "author": "Rodrigo Odhin <rodrigo@odhin.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/rodrigoodhin/playwright-html/-/issues"
+  },
+  "homepage": "https://gitlab.com/rodrigoodhin/playwright-html/-/blob/main/README.md?ref_type=heads",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  },
+  "dependencies": {
+    "@node-minify/clean-css": "^8.0.6",
+    "@node-minify/core": "^8.0.6",
+    "@node-minify/uglify-js": "^8.0.6",
+    "ansi-to-html": "^0.7.2",
+    "autoprefixer": "^10.4.14",
+    "axios": "^0.24.0",
+    "connect": "^3.7.0",
+    "cssnano": "^6.0.1",
+    "csso": "^5.0.5",
+    "dayjs": "^1.11.7",
+    "expres": "^0.0.5",
+    "express": "^4.18.2",
+    "fetch-base64": "^2.1.2",
+    "fs-extra": "^11.1.1",
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.1",
+    "js-base64-file": "^2.0.3",
+    "lodash": "^4.17.21",
+    "minify-all": "^1.2.2",
+    "node-html-to-image": "^3.3.0",
+    "open": "^9.1.0",
+    "picocolors": "^1.0.0",
+    "portastic": "^1.0.1",
+    "portfinder": "^1.0.32",
+    "postcss": "^8.4.24",
+    "prismjs": "^1.29.0",
+    "serve-static": "^1.15.0",
+    "static-server": "^2.2.1",
+    "tunnel": "^0.0.6",
+    "uglify-js": "^3.17.4",
+    "xhr2": "^0.2.1",
+    "xmlhttprequest": "^1.8.0",
+    "yuicompressor": "^2.4.8"
+  }
+}

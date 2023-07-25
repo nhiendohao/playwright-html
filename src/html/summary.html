@@ -1,0 +1,28 @@
+<div class="accordion accordion-flush mt-3 mb-3 shadow" id="accordionPanelsSummary{{.SummaryId}}">
+	<div class="accordion-item">
+	  <h2 class="accordion-header">
+		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-{{.SummaryId}}" aria-expanded="true" aria-controls="panel-collapse-{{.SummaryId}}">
+			{{.SummaryTitleName}}
+		</button>
+	  </h2>
+	  <div id="panel-collapse-{{.SummaryId}}" class="accordion-collapse collapse show">
+		<div class="accordion-body odhin-table-no-scroll">
+			<div class="table-responsive">
+				<table class="table table-sm mb-0">
+					<tr>
+						<th class="odhin-text">{{.SummaryColumnName}}</th>
+						<th class="odhin-text">Tests</th>
+						<th class="odhin-text">Execution Time</th>
+						<th class="odhin-text">Passed</th>
+						<th class="odhin-text">Failed</th>
+						<th class="odhin-text">Timed Out</th>
+						<th class="odhin-text">Skipped</th>
+						<th class="odhin-text">Interrupted</th>
+					</tr>
+					{{.Data}}
+				</table>
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>

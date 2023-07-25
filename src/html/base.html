@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAb1BMVEVHcExXTVCWTT5sTUrsTSOqTTiHTULGTS9VTVBITVV5TUZiTU0xTVsdjSIurTM9TVjaU0jUU0diTU50Tkm/TTGCTkUrZ0dRTVIrnDStTjwuWk/AUUcwVFUleDOSTz4vjj+eT0UhhSgvdkguSVRIdi9iRTBeAAAADHRSTlMA4l+8D0CBJOj7ndGFYCYTAAACsUlEQVRIx52WiXarIBBAG7MYDBZlU1wQa///G99AXACTE/smPTkp8TrDcDv16+v/4pIejMuK3E7PuL+N+YLbimT4WJANuZGDSLIiCcGIsYoCSSmihLqwK/AjYB3BLwwuChDGlVIVrjinSmvBOTeworngRsOCEVwjjK4rckWAwKqgmnPGeEVLDhdzITjcinOACK8wvgcIZCdMCyiEEoaJsFVBbZoy+IjgW6gL39MVSe/Htn/aziU9eesVI0IYw4SNKkAeG3J5eOuUa06NgkZwrmiAnD3k7COKKiQ0gW1DE7V/ZJknmY8QaDVB0BAblL5Dsr/6ctQYz5c90vXyE5JEiMzHF4znizv+MEme533zF6TJbYwygjxfYmOq3/wZYy+7NTP4EiCbMYSadkEg6mH4sTHU0vfFGUONYKCtaYtCjRvyvcaP74szRhRFWZaFDe0l2RCJz8FYOmMK18PLQsJtvelDpAt8scZUlrCZihK2Atuept6vq+4CX+zxk7YoW8OocohtViMdUj8zDXiHYFOUDP6Yy2Jp2DhCXbXsJlm73Qe+OGMolKRaePN6XH8PtkQJSBMePiAI28pc0zzEbWL4aQDFMWKNEW7vRSucYWN8KqEvT2NQaxlV2U5By2Q/1l6/Il9mY5itqsLIFtZ30zQ14MmaJPRlnjHEFIUBZfToGAxHM3WuXTZJ6MsyY5Cyx1mq39n9DnfNsCSJfFlmTGWsAa2YW1wPyzHG88WbMYSZtn32bBNs6HbzJRhLMMIIbvwW1w1+iUQzxmns58CxL/sZA8fiWjWskwbtELSbQY2U/sCIfNnNmBcR+QLIx/9KpxiZZwzx3qPpGvli09zO97fDHN3Pt+vLJ5kke6AdRtAjS9LL2weg1CZD3uUnuP3l82PTnIxANUl6+Gnresuy5PPtj8Y/qFVlCgczN3YAAAAASUVORK5CYII="/>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>{{.Title}}</title>
+    <link rel='preconnect' href='https://fonts.gstatic.com'>
+    {{.BootstrapCss}}
+    {{.JQueryDataTablesCss}}
+    {{.PrismCss}}
+    {{.Css}}
+    {{.ImgComparisonSliderJs}}
+    {{.ImgComparisonSliderCss}}
+</head>
+<div id="loading">
+  <div class="ldio-45zk8dsdxop">
+    <div style='left:38px;top:38px;animation-delay:0s'></div><div style='left:80px;top:38px;animation-delay:0.125s'></div><div style='left:122px;top:38px;animation-delay:0.25s'></div><div style='left:38px;top:80px;animation-delay:0.875s'></div><div style='left:122px;top:80px;animation-delay:0.375s'></div><div style='left:38px;top:122px;animation-delay:0.75s'></div><div style='left:80px;top:122px;animation-delay:0.625s'></div><div style='left:122px;top:122px;animation-delay:0.5s'></div>
+    </div>
+</div>
+<body id="body-content">
+  
+<div class="container-fluid p-0 min-vh-100 position-relative" style="padding-bottom: 80px !important;">
+
+  <nav class="navbar navbar-expand-lg mb-1 text-white fw-bold odhin-bg shadow sticky-top">
+      <div class="container-fluid ms-4 me-4">
+          <label>{{.Title}}</label>
+          <span class="navbar-text text-white">
+            <button type="button" class="menu-btn" onclick='displayContent("dashboard")' >Dashboard</button>
+            <button type="button" class="menu-btn" onclick='displayContent("test-list")' >Tests</button>
+          </span>    
+      </div>
+  </nav>
+
+  <div class="container-fluid text-center mt-3 mb-5" id="dashboard">
+          <div class="row ms-3 me-3">
+            <div class="col-12 col-xl-6">
+              {{.RunInfo}}
+            </div>
+            <div class="col-12 col-xl-6">
+              {{.ChartStatus}}
+            </div>
+            <div class="col-12 col-xl-6">
+              {{.ChartFile}}
+            </div>
+            <div class="col-12 col-xl-6">
+              {{.ChartBrowser}}
+            </div>
+            <div class="col-12">
+              {{.SummaryFiles}}
+            </div>
+            <div class="col-12">
+              {{.SummaryBrowsers}}
+            </div>
+          </div>
+  </div>
+    
+  <div class="container-fluid mt-3 mb-5 hide" id="test-list">
+    <div class="row ms-3 me-3">
+      <div class="col">
+        {{.Content}}
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5 position-absolute bottom-0 start-0">
+      <div class="row">
+        <div class="col text-center fw-bold p-3 text-white odhin-footer">
+          <p>Created by <span class="text-warning">Rodrigo Odhin</span></p>
+          <p class="footer-icons">
+            <a href="https://odhin.io/" target="_Blank" class="text-decoration-none">
+              <span class="website-icon-bottom"></span>
+            </a>
+            <a href="https://gitlab.com/rodrigoodhin/" target="_Blank" class="text-decoration-none">
+              <span class="gitlab-icon-bottom"></span>
+            </a>
+            <a href="https://github.com/rodrigoodhin/" target="_Blank" class="text-decoration-none">
+              <span class="github-icon-bottom"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/rodrigocostacorrea/" target="_Blank" class="text-decoration-none">
+              <span class="linkedin-icon-bottom"></span>
+            </a>
+          </p>
+        </div>
+      </div>
+  </div>
+  
+
+</div>
+
+{{.jQuery}}
+{{.JQueryDataTablesJs}}
+{{.DataTables}}
+{{.ChartJsLibrary}}
+{{.ChartJs}}
+{{.BootstrapJs}}
+{{.PrismJs}}
+{{.Js}}
+</body>
+</html>

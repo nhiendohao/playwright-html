@@ -1,0 +1,39 @@
+<div class="accordion accordion-flush mt-3 mb-3 shadow" id="accordionPanelsChartBrowser">
+	<div class="accordion-item">
+	  <h2 class="accordion-header">
+		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-chart-browser" aria-expanded="true" aria-controls="panel-collapse-chart-browser">
+			Browsers
+		</button>
+	  </h2>
+	  <div id="panel-collapse-chart-browser" class="accordion-collapse collapse show">
+		<div class="accordion-body odhin-table">
+				<table class="table table-sm table-borderless mb-0">
+					<tr>
+						<td>
+							<table class="table table-sm table-borderless mb-0">
+								<tr>
+									<th class="odhin-text">Chart</th>
+								</tr>
+								<tr>
+									{{.Chart}}
+								</tr>							
+							</table>
+						</td>
+						<td>
+							<div class="table-responsive tableFixHead">
+								<table class="table table-sm table-borderless mb-0">
+									<thead>
+										<th class="odhin-text">Browser</th>
+										<th class="odhin-text">Tests</th>
+										<th class="odhin-text">Percentage</th>
+									</thead>
+									{{.ChartBrowser}}
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+	  	</div>
+	</div>
+</div>

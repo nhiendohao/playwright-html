@@ -1,0 +1,10 @@
+<tr>
+    <td class="fs-6 text-secondary-emphasis">{{.Name}}</td>
+    <td class="text-secondary-emphasis">{{.TotalTests}}</td>
+    <td class="text-secondary-emphasis">{{.TotalExecutionTime}}</td>
+    <td class="result-status-passed">{{.PassedValue}} (<label class="fst-italic">{{.PassedPercentage}}%</label>)</td>
+    <td class="result-status-failed">{{.FailedValue}} (<label class="fst-italic">{{.FailedPercentage}}%</label>)</td>
+    <td class="result-status-timedOut">{{.TimedOutValue}} (<label class="fst-italic">{{.TimedOutPercentage}}%</label>)</td>
+    <td class="result-status-skipped">{{.SkippedValue}} (<label class="fst-italic">{{.SkippedPercentage}}%</label>)</td>
+    <td class="result-status-interrupted">{{.InterruptedValue}} (<label class="fst-italic">{{.InterruptedPercentage}}%</label>)</td>
+</tr>

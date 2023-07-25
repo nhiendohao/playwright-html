@@ -1,0 +1,8 @@
+node_modules/
+test-results/
+playwright-html-report/
+playwright/.cache/
+.vscode
+logs/
+lib/
+.idea

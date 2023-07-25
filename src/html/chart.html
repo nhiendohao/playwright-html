@@ -1,0 +1,21 @@
+<td rowspan="{{.RowSpan}}" class="chart value">
+    <div class="position-relative">
+        <div
+            class="position-absolute top-50 start-50 w-100 translate-middle odhin-text ps-2 fs-5"
+        >
+            {{.TotalTests}}
+        </div>
+        <canvas
+            id="{{.ChartId}}"
+            style="
+                display: block;
+                box-sizing: border-box;
+                height: 160px;
+                width: 160px;
+                margin: 0px auto;
+            "
+            width="160"
+            height="160"
+        ></canvas>
+    </div>
+</td>
