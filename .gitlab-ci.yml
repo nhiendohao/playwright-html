@@ -3,8 +3,9 @@ stages:
   - test
   - publish
 
+image: node:latest
+
 build:
-  image: node:latest
   stage: build
   script:
     - npm install
