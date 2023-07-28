@@ -21,3 +21,4 @@ publish:
   script:
     - npm config set //registry.npmjs.org/:_authToken ${PLAYWRIGHT_HTML_PIPELINE_TOKEN}
     - npm publish
+    
