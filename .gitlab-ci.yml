@@ -1,24 +1,16 @@
 stages:
-  - build
-  - test
   - publish
 
-image: node:latest
-
-build:
-  stage: build
+publish:
+  image: node:latest
+  stage: publish
+  only:
+    - main
   script:
     - npm install -g typescript
     - npm install
     - npm run build
     - cp src/server.mjs lib/server.mjs
     - cp -r src/html lib/html
-
-publish:
-  stage: publish
-  only:
-    - main
-  script:
     - npm config set //registry.npmjs.org/:_authToken ${PLAYWRIGHT_HTML_PIPELINE_TOKEN}
     - npm publish
-    
