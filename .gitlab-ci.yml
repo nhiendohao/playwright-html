@@ -8,11 +8,12 @@ image: node:latest
 build:
   stage: build
   script:
+    - npm install -g typescript
     - npm install
     - npm run build
     - cp src/server.mjs lib/server.mjs
     - cp -r src/html lib/html
-    
+
 publish:
   stage: publish
   only:
