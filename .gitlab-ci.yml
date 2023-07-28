@@ -36,6 +36,7 @@ publish:
         exit 1
       fi
 
+    - npm install
     - npm run build
     - cp src/server.mjs lib/server.mjs
     - cp -r src/html lib/html
