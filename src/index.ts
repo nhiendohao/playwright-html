@@ -95,35 +95,110 @@ class OdhinPlaywrightReporter implements Reporter {
 
 		try {
 			// Load HTML Files
-			this.base = fs.readFileSync(path.resolve(__dirname, "html/base.html"), "utf-8");
-			this.runInfo = fs.readFileSync(path.resolve(__dirname, "html/runInfo.html"), "utf-8");
-			this.chart = fs.readFileSync(path.resolve(__dirname, "html/chart.html"), "utf-8");
-			this.chartInfo = fs.readFileSync(path.resolve(__dirname, "html/chartInfo.html"), "utf-8");
-			this.chartStatus = fs.readFileSync(path.resolve(__dirname, "html/chartStatus.html"), "utf-8");
-			this.chartFile = fs.readFileSync(path.resolve(__dirname, "html/chartFile.html"), "utf-8");
-			this.chartBrowser = fs.readFileSync(path.resolve(__dirname, "html/chartBrowser.html"), "utf-8");
-			this.chartJs = fs.readFileSync(path.resolve(__dirname, "html/chartJs.html"), "utf-8");
-			this.content = fs.readFileSync(path.resolve(__dirname, "html/content.html"), "utf-8");
-			this.summary = fs.readFileSync(path.resolve(__dirname, "html/summary.html"), "utf-8");
-			this.summaryRow = fs.readFileSync(path.resolve(__dirname, "html/summaryRow.html"), "utf-8");
-			this.testCaseTemplate = fs.readFileSync(path.resolve(__dirname, "html/testCase.html"), "utf-8");
+			fs.readFile(path.resolve(__dirname, "html/base.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.base = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/runInfo.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.runInfo = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chart.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chart = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chartInfo.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartInfo = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chartStatus.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartStatus = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chartFile.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartFile = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chartBrowser.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartBrowser = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/chartJs.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartJs = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/content.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.content = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/summary.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.summary = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/summaryRow.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.summaryRow = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/testCase.html"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.testCaseTemplate = data;
+			});
 
 			// Load CSS Files
-			this.css = fs.readFileSync(path.resolve(__dirname, "html/assets/css/style.css"), "utf-8");
-			this.jqueryDataTablesCss = fs.readFileSync(path.resolve(__dirname, "html/assets/css/jquery.dataTables.min.css"), "utf-8");
-			this.bootstrapCss = fs.readFileSync(path.resolve(__dirname, "html/assets/css/bootstrap.min.css"), "utf-8");
-			this.prismCss = fs.readFileSync(path.resolve(__dirname, "html/assets/css/prism.css"), "utf-8");
-			this.imgComparisonSliderCss = fs.readFileSync(path.resolve(__dirname, "html/assets/css/img-comparison-slider.css"), "utf-8");
+			fs.readFile(path.resolve(__dirname, "html/assets/css/style.css"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.css = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/css/jquery.dataTables.min.css"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.jqueryDataTablesCss = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/css/bootstrap.min.css"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.bootstrapCss = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/css/prism.css"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.prismCss = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/css/img-comparison-slider.css"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.imgComparisonSliderCss = data;
+			});
 
 			// Load JS Files
-			this.jQuery = fs.readFileSync(path.resolve(__dirname, "html/assets/js/jquery-3.5.1.js"), "utf-8");
-			this.js = fs.readFileSync(path.resolve(__dirname, "html/assets/js/script.js"), "utf-8");
-			this.chartJsLibrary = fs.readFileSync(path.resolve(__dirname, "html/assets/js/chart.js"), "utf-8");
-			this.jqueryDataTablesJs = fs.readFileSync(path.resolve(__dirname, "html/assets/js/jquery.dataTables.min.js"), "utf-8");
-			this.dataTables = fs.readFileSync(path.resolve(__dirname, "html/assets/js/dataTables.js"), "utf-8");
-			this.bootstrapJs = fs.readFileSync(path.resolve(__dirname, "html/assets/js/bootstrap.min.js"), "utf-8");
-			this.prismJs = fs.readFileSync(path.resolve(__dirname, "html/assets/js/prism.js"), "utf-8");
-			this.imgComparisonSliderJs = fs.readFileSync(path.resolve(__dirname, "html/assets/js/img-comparison-slider.js"), "utf-8");
+			fs.readFile(path.resolve(__dirname, "html/assets/js/jquery-3.5.1.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.jQuery = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/script.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.js = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/chart.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.chartJsLibrary = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/jquery.dataTables.min.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.jqueryDataTablesJs = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/dataTables.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.dataTables = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/bootstrap.min.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.bootstrapJs = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/prism.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.prismJs = data;
+			});
+			fs.readFile(path.resolve(__dirname, "html/assets/js/img-comparison-slider.js"), "utf-8", (err, data) => {
+				if (err) throw err;
+				this.imgComparisonSliderJs = data;
+			});
 				
 		} catch (error) {
 			console.log(error);
