@@ -1,6 +1,6 @@
 {
   "name": "playwright-html",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "HTML report for Playwright",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:rodrigoodhin/playwright-html.git"
+    "url": "git+git@gitlab.com:rodrigoodhin/playwright-html.git"
   },
   "keywords": [
     "playwright",
