@@ -1,6 +1,6 @@
 {
-  "name": "playwright-html",
-  "version": "0.1.5",
+  "name": "@rodrigoodhin/playwright-html",
+  "version": "0.2.0",
   "description": "HTML report for Playwright",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
