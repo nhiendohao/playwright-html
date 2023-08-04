@@ -6,6 +6,7 @@ const config: PlaywrightTestConfig = {
 	expect: {
 		timeout: 10 * 1000,
 	},
+  //retries: 2,
   reporter: [
   ['./src/index.ts', { 
     testFolder: 'tests',
@@ -33,44 +34,44 @@ const config: PlaywrightTestConfig = {
         name: 'chromium',
         use: { ...devices['Desktop Chrome'] },
       },
-      {
-        name: 'firefox',
-        use: { ...devices['Desktop Firefox'] },
-      },
-      {
-        name: 'webkit',
-        use: { ...devices['Desktop Safari'] },
-      },
-      /* Test against mobile viewports. */
-      {
-        name: 'Mobile Chrome',
-        use: { ...devices['Pixel 5'] },
-      },
-      {
-        name: 'Mobile Safari',
-        use: { ...devices['iPhone 12'] },
-      },
-      /* Test against branded browsers. */
-      {
-        name: 'Google Chrome',
-        use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-      },
-      {
-        name: 'Google Chrome Beta',
-        use: { ...devices['Desktop Chrome'], channel: 'chrome-beta' },
-      },
-      {
-        name: 'Microsoft Edge',
-        use: { ...devices['Desktop Edge'], channel: 'msedge' },
-      },
-      {
-        name: 'Microsoft Edge Beta',
-        use: { ...devices['Desktop Edge'], channel: 'msedge-beta' },
-      },
-      {
-        name: 'Microsoft Edge Dev',
-        use: { ...devices['Desktop Edge'], channel: 'msedge-dev' },
-      },
+      //{
+      //  name: 'firefox',
+      //  use: { ...devices['Desktop Firefox'] },
+      //},
+      //{
+      //  name: 'webkit',
+      //  use: { ...devices['Desktop Safari'] },
+      //},
+      ///* Test against mobile viewports. */
+      //{
+      //  name: 'Mobile Chrome',
+      //  use: { ...devices['Pixel 5'] },
+      //},
+      //{
+      //  name: 'Mobile Safari',
+      //  use: { ...devices['iPhone 12'] },
+      //},
+      ///* Test against branded browsers. */
+      //{
+      //  name: 'Google Chrome',
+      //  use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      //},
+      //{
+      //  name: 'Google Chrome Beta',
+      //  use: { ...devices['Desktop Chrome'], channel: 'chrome-beta' },
+      //},
+      //{
+      //  name: 'Microsoft Edge',
+      //  use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      //},
+      //{
+      //  name: 'Microsoft Edge Beta',
+      //  use: { ...devices['Desktop Edge'], channel: 'msedge-beta' },
+      //},
+      //{
+      //  name: 'Microsoft Edge Dev',
+      //  use: { ...devices['Desktop Edge'], channel: 'msedge-dev' },
+      //},
   ],
 };
 export default config;

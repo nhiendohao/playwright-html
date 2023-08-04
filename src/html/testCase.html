@@ -4,6 +4,7 @@
 	<td class="{{.TDClassesCss}}">{{.File}}</td>
 	<td class="{{.TDClassesCss}}">{{.Browser}}</td>
 	<td class="{{.TDClassesCss}}">{{.Duration}}</td>
+	{{.Retry}}
 	<td class="{{.TDClassesCss}}" >
 		<a
 			href="#"
@@ -67,6 +68,7 @@
 																<th class="odhin-text">Total Execution Time</th>
 																<td class="text-secondary-emphasis fst-italic">{{.InfoTotalExecutionTime}}</td>
 															</tr>
+															{{.InfoRetry}}
 														</table>
 													</div>
 												</div>

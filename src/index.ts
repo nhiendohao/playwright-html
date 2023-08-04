@@ -484,10 +484,26 @@ class OdhinPlaywrightReporter implements Reporter {
 
 		// Prepara test data
 		let testCases = "";
+		let showRetries = false;
+
+		for (const tc of this.testCases) {
+			if (tc.testCase.retries > 0) {
+				showRetries = true;
+				break
+			}
+		}
 
 		this.testCases.forEach((testCase) => {
+
+			let testCaseId = testCase.testCase.id + "-" + testCase.result.retry;
 			let testCaseHtml = this.testCaseTemplate;
-			testCaseHtml = testCaseHtml.replaceAll("{{.ModalID}}", testCase.testCase.id);
+			
+			testCaseHtml = testCaseHtml.replaceAll("{{.ModalID}}", testCaseId);		
+			if(showRetries === true){
+				testCaseHtml = testCaseHtml.replaceAll("{{.Retry}}", "<td class=\"{{.TDClassesCss}}\">"+testCase.result.retry.toString()+"</td>");	
+			} else {
+				testCaseHtml = testCaseHtml.replaceAll("{{.Retry}}", "");	
+			}
 			testCaseHtml = testCaseHtml.replaceAll("{{.TRClassesCss}}", "result-status-"+testCase.result.status);
 			testCaseHtml = testCaseHtml.replaceAll("{{.TDClassesCss}}", "result-status-"+testCase.result.status);
 			testCaseHtml = testCaseHtml.replaceAll("{{.ModalHeaderClassesCss}}", "label-status-"+testCase.result.status);
@@ -503,6 +519,13 @@ class OdhinPlaywrightReporter implements Reporter {
 			testCaseHtml = testCaseHtml.replaceAll("{{.InfoBrowser}}", testCase.testCase["_projectId"]);
 			testCaseHtml = testCaseHtml.replaceAll("{{.InfoStartTime}}", testCase.result.startTime.toUTCString());
 			testCaseHtml = testCaseHtml.replaceAll("{{.InfoTotalExecutionTime}}", this.help.convertMsToTime(testCase.result.duration));
+			if(showRetries === true){
+				testCaseHtml = testCaseHtml.replaceAll("{{.InfoRetry}}", "<tr><th class=\"odhin-text\">Retry</th><td class=\"text-secondary-emphasis fst-italic\">"+testCase.result.retry.toString()+"</td></tr>");	
+			} else {
+				testCaseHtml = testCaseHtml.replaceAll("{{.InfoRetry}}", "");	
+			}
+
+
 
 			// Add errors
 			let errors = "";
@@ -518,7 +541,7 @@ class OdhinPlaywrightReporter implements Reporter {
 						}
 					});
 				}
-				testCaseHtml = testCaseHtml.replaceAll("{{.Errors}}", this.help.printErrors(errors, (errorFile.length > 1 ? this.help.printErrorCode(errorFile) : "" ), testCase.testCase.id));
+				testCaseHtml = testCaseHtml.replaceAll("{{.Errors}}", this.help.printErrors(errors, (errorFile.length > 1 ? this.help.printErrorCode(errorFile) : "" ), testCaseId));
 			} else {	
 				testCaseHtml = testCaseHtml.replaceAll("{{.Errors}}", "");
 			}			
@@ -526,7 +549,7 @@ class OdhinPlaywrightReporter implements Reporter {
 			// Add steps
 			let steps = "";
 			testCase.result.steps.forEach((step, index) => {
-					steps += this.help.printStep(testCase.testCase.id, index, step, 10);
+					steps += this.help.printStep(testCaseId, index, step, 10);
 			});
 			testCaseHtml = testCaseHtml.replaceAll("{{.Steps}}", `<div class="row m-0 p-0"><div class="col m-0 p-0">`+steps+`</div></div>`);
 
@@ -549,31 +572,36 @@ class OdhinPlaywrightReporter implements Reporter {
 							screenshotDiff = (attachment.path !== undefined ? attachment.path : "");
 						}
 					} else {						
-						screenshots += (attachment.path !== undefined ? this.help.printScreenshot(testCase.testCase.id, attachment.path) : "");
+						screenshots += (attachment.path !== undefined ? this.help.printScreenshot(testCaseId, attachment.path) : "");
 					}
 				} else if (attachment.contentType.startsWith("video/")) {
-					videos += (attachment.path !== undefined ? this.help.printVideo(testCase.testCase.id, attachment.path) : "");
+					videos += (attachment.path !== undefined ? this.help.printVideo(testCaseId, attachment.path) : "");
 				} else if (attachment.contentType.startsWith("application/") && attachment.name === "trace") {
-					trace = (attachment.path !== undefined ? this.help.printTrace(testCase.testCase.id, attachment.path) : "");
+					trace = (attachment.path !== undefined ? this.help.printTrace(testCaseId, attachment.path) : "");
 				}
 			});
 			if(screenshotExpected !== "" && screenshotActual !== "" && screenshotDiff !== ""){
-				screenshotsComparison += this.help.printScreenshotComparison(testCase.testCase.id, screenshotExpected, screenshotActual, screenshotDiff);
+				screenshotsComparison += this.help.printScreenshotComparison(testCaseId, screenshotExpected, screenshotActual, screenshotDiff);
 			}
-			testCaseHtml = testCaseHtml.replaceAll("{{.Screenshots}}", (screenshots !== "" ? this.help.printScreenshots(screenshotsComparison+screenshots, testCase.testCase.id) : ""));
-			testCaseHtml = testCaseHtml.replaceAll("{{.Videos}}", (videos !== "" ? this.help.printVideos(videos, testCase.testCase.id) : ""));
+			testCaseHtml = testCaseHtml.replaceAll("{{.Screenshots}}", (screenshots !== "" ? this.help.printScreenshots(screenshotsComparison+screenshots, testCaseId) : ""));
+			testCaseHtml = testCaseHtml.replaceAll("{{.Videos}}", (videos !== "" ? this.help.printVideos(videos, testCaseId) : ""));
 
 			testCaseHtml = testCaseHtml.replaceAll("{{.Trace}}", trace);
 
 			let stdout =testCase.result.stdout.toString();
-			testCaseHtml = testCaseHtml.replaceAll("{{.Stdout}}", (stdout !== "" ? this.help.printStdout(testCase.testCase.id, stdout) : ""));
+			testCaseHtml = testCaseHtml.replaceAll("{{.Stdout}}", (stdout !== "" ? this.help.printStdout(testCaseId, stdout) : ""));
 
 			let stderr =testCase.result.stderr.toString();
-			testCaseHtml = testCaseHtml.replaceAll("{{.Stderr}}", (stderr !== "" ? this.help.printStderr(testCase.testCase.id, stderr) : ""));
+			testCaseHtml = testCaseHtml.replaceAll("{{.Stderr}}", (stderr !== "" ? this.help.printStderr(testCaseId, stderr) : ""));
 
 			testCases += testCaseHtml;
 		});
 		this.content = this.content.replace("{{.TestCases}}", testCases);
+		if(showRetries === true){
+			this.content = this.content.replaceAll("{{.RetryColumn}}", "<th>Retry</th>");
+		} else {
+			this.content = this.content.replaceAll("{{.RetryColumn}}", "");
+		}
 
 		// Add Information to the base HTML file
 		this.base = this.help.updateHtml(this.base, "{{.BootstrapCss}}", this.bootstrapCss, "css", "bootstrap.css");
