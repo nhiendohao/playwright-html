@@ -1,5 +1,5 @@
 {
-  "name": "playwright-html",
+  "name": "playwright-html-reporter",
   "version": "0.1.10",
   "description": "HTML report for Playwright",
   "main": "lib/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nhiendohao/playwright-html.git"
+    "url": "git+ssh://git@github.com/nhiendohao/playwright-html.git"
   },
   "keywords": [
     "playwright",
@@ -67,5 +67,8 @@
     "xhr2": "^0.2.1",
     "xmlhttprequest": "^1.8.0",
     "yuicompressor": "^2.4.8"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

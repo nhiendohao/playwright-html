@@ -16,7 +16,7 @@ Generates a complete HTML report for your playwright test runs.
 ## Install
 
 ```sh
-npm i -D playwright-html
+npm i -D playwright-html-reporter
 ```
 
 ## Usage

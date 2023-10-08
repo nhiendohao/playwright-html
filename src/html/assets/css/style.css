@@ -46,26 +46,26 @@
 /*********************************************************************************************************************/
 
 :root {
-	--odhin-color: #163647;
-	--odhin-light-color: #e8e9ec;
-	--odhin-dark-color: #f3f3f3;
-	--odhin-very-dark-color: #c0c0c0;
-	--odhin-green-light-color: #55bb67;
-	--odhin-almost-white-color: #f1f1f1;
-	--odhin-white-color: #ffffff;
+	--rb-color: #163647;
+	--rb-light-color: #e8e9ec;
+	--rb-dark-color: #f3f3f3;
+	--rb-very-dark-color: #c0c0c0;
+	--rb-green-light-color: #55bb67;
+	--rb-almost-white-color: #f1f1f1;
+	--rb-white-color: #ffffff;
 
-	--odhin-passed-status-color: #2e7d31;
-	--odhin-failed-status-color: #c62828;
-	--odhin-timedOut-status-color: #d6ad0a;
-	--odhin-skipped-status-color: #ff6f00;
-	--odhin-interrupted-status-color: #01579b;
-	--odhin-light-passed-status-color: #e5f8e5;
-	--odhin-light-failed-status-color: #fde6e6;
-	--odhin-light-timedOut-status-color: #faf4e0;
-	--odhin-light-skipped-status-color: #fff0e3;
-	--odhin-light-interrupted-status-color: #ddebf7;
+	--rb-passed-status-color: #2e7d31;
+	--rb-failed-status-color: #c62828;
+	--rb-timedOut-status-color: #d6ad0a;
+	--rb-skipped-status-color: #ff6f00;
+	--rb-interrupted-status-color: #01579b;
+	--rb-light-passed-status-color: #e5f8e5;
+	--rb-light-failed-status-color: #fde6e6;
+	--rb-light-timedOut-status-color: #faf4e0;
+	--rb-light-skipped-status-color: #fff0e3;
+	--rb-light-interrupted-status-color: #ddebf7;
 
-	--odhin-border-radius: 8px;
+	--rb-border-radius: 8px;
 }
 
 /* fallback */
@@ -133,9 +133,9 @@
 }
 .loader {
 	margin: auto;
-	border: 20px solid var(--odhin-green-light-color);
+	border: 20px solid var(--rb-green-light-color);
 	border-radius: 50%;
-	border-top: 20px solid var(--odhin-color);
+	border-top: 20px solid var(--rb-color);
 	width: 100px;
 	height: 100px;
 	animation: spinner 1s linear infinite;
@@ -192,14 +192,14 @@
 	list-style: none;
 	text-decoration: none;
 
-	scrollbar-color: var(--odhin-green-light-color);
-	scrollbar-face-color: var(--odhin-green-light-color);
-	scrollbar-shadow-color: var(--odhin-almost-white-color);
-	scrollbar-highlight-color: var(--odhin-almost-white-color);
-	scrollbar-3dlight-color: var(--odhin-almost-white-color);
-	scrollbar-darkshadow-color: var(--odhin-almost-white-color);
-	scrollbar-track-color: var(--odhin-almost-white-color);
-	scrollbar-arrow-color: var(--odhin-almost-white-color);
+	scrollbar-color: var(--rb-green-light-color);
+	scrollbar-face-color: var(--rb-green-light-color);
+	scrollbar-shadow-color: var(--rb-almost-white-color);
+	scrollbar-highlight-color: var(--rb-almost-white-color);
+	scrollbar-3dlight-color: var(--rb-almost-white-color);
+	scrollbar-darkshadow-color: var(--rb-almost-white-color);
+	scrollbar-track-color: var(--rb-almost-white-color);
+	scrollbar-arrow-color: var(--rb-almost-white-color);
 }
 body,
 html {
@@ -209,7 +209,7 @@ html {
 	margin: 0;
 	padding: 0;
 	display: table;
-	background-color: var(--odhin-very-dark-color);
+	background-color: var(--rb-very-dark-color);
 }
 html,
 body {
@@ -220,118 +220,118 @@ body {
 	width: 12px;
 }
 *::-webkit-scrollbar-track {
-	background: var(--odhin-almost-white-color);
-	border-radius: var(--odhin-border-radius) !important;
+	background: var(--rb-almost-white-color);
+	border-radius: var(--rb-border-radius) !important;
 }
 *::-webkit-scrollbar-thumb {
-	background: var(--odhin-green-light-color);
-	border: 1px solid var(--odhin-color);
-	border-radius: var(--odhin-border-radius) !important;
+	background: var(--rb-green-light-color);
+	border: 1px solid var(--rb-color);
+	border-radius: var(--rb-border-radius) !important;
 }
 ::-moz-selection {
-	color: var(--odhin-almost-white-color);
-	background: var(--odhin-green-light-color);
+	color: var(--rb-almost-white-color);
+	background: var(--rb-green-light-color);
 }
 ::selection {
-	color: var(--odhin-almost-white-color);
-	background: var(--odhin-green-light-color);
+	color: var(--rb-almost-white-color);
+	background: var(--rb-green-light-color);
 }
-.odhin-bg {
-	background-color: var(--odhin-color);
+.rb-bg {
+	background-color: var(--rb-color);
 }
-.odhin-bg-light {
-	background-color: var(--odhin-light-color);
+.rb-bg-light {
+	background-color: var(--rb-light-color);
 }
-.odhin-bg-dark {
-	background-color: var(--odhin-dark-color);
+.rb-bg-dark {
+	background-color: var(--rb-dark-color);
 }
-.odhin-bg-very-dark {
-	background-color: var(--odhin-very-dark-color);
+.rb-bg-very-dark {
+	background-color: var(--rb-very-dark-color);
 }
-.odhin-text {
-	color: var(--odhin-color);
+.rb-text {
+	color: var(--rb-color);
 	font-weight: normal;
 }
-.odhin-text-light {
-	color: var(--odhin-light-color);
+.rb-text-light {
+	color: var(--rb-light-color);
 }
-.odhin-footer{
-	background-color: var(--odhin-color);
+.rb-footer{
+	background-color: var(--rb-color);
 }
-.odhin-footer p {
+.rb-footer p {
 	margin: 0;
 }
-.odhin-footer p.footer-icons{
+.rb-footer p.footer-icons{
 	margin: 5px 0 0 0;
 }
-.odhin-card {
+.rb-card {
 	border: 0 !important;
-	border-color: var(--odhin-dark-color);
-	background-color: var(--odhin-dark-color);
-	border-radius: var(--odhin-border-radius) !important;
+	border-color: var(--rb-dark-color);
+	background-color: var(--rb-dark-color);
+	border-radius: var(--rb-border-radius) !important;
 }
-.odhin-card-title {
+.rb-card-title {
 	border: 0 !important;
-	border-bottom-color: var(--odhin-dark-color);
-	color: var(--odhin-color);
+	border-bottom-color: var(--rb-dark-color);
+	color: var(--rb-color);
 	padding: 8px 0;
 	font-size: 1.2rem;
-	border-radius: var(--odhin-border-radius) !important;
+	border-radius: var(--rb-border-radius) !important;
 	text-align: center !important;
 }
-.odhin-attachments-buttons-card,
-.odhin-attachments-buttons-card-special {
+.rb-attachments-buttons-card,
+.rb-attachments-buttons-card-special {
 	padding: 12px 0 22px 0;
 }
-.odhin-attachments-buttons-card-no-bottom {
+.rb-attachments-buttons-card-no-bottom {
 	padding: 12px 0 5px 0;
 }
-.odhin-attachments-buttons-card-special,
-.odhin-attachments-buttons-card-no-bottom {
+.rb-attachments-buttons-card-special,
+.rb-attachments-buttons-card-no-bottom {
 	margin-top: -7px;
 }
-.odhin-attachment-body img,
-.odhin-attachment-body video {
-	border: var(--odhin-color) 1px solid;
+.rb-attachment-body img,
+.rb-attachment-body video {
+	border: var(--rb-color) 1px solid;
 }
 .chart-status-passed {
-	color: var(--odhin-passed-status-color);
-	border-left: var(--odhin-passed-status-color) 5px solid;
+	color: var(--rb-passed-status-color);
+	border-left: var(--rb-passed-status-color) 5px solid;
 }
 .chart-status-failed {
-	color: var(--odhin-failed-status-color);
-	border-left: var(--odhin-failed-status-color) 5px solid;
+	color: var(--rb-failed-status-color);
+	border-left: var(--rb-failed-status-color) 5px solid;
 }
 .chart-status-timedOut {
-	color: var(--odhin-timedOut-status-color);
-	border-left: var(--odhin-timedOut-status-color) 5px solid;
+	color: var(--rb-timedOut-status-color);
+	border-left: var(--rb-timedOut-status-color) 5px solid;
 }
 .chart-status-skipped {
-	color: var(--odhin-skipped-status-color);
-	border-left: var(--odhin-skipped-status-color) 5px solid;
+	color: var(--rb-skipped-status-color);
+	border-left: var(--rb-skipped-status-color) 5px solid;
 }
 .chart-status-interrupted {
-	color: var(--odhin-interrupted-status-color);
-	border-left: var(--odhin-interrupted-status-color) 5px solid;
+	color: var(--rb-interrupted-status-color);
+	border-left: var(--rb-interrupted-status-color) 5px solid;
 }
 .result-header {
-	background-color: var(--odhin-color);
-	color: var(--odhin-light-color);
-	border-top-left-radius: var(--odhin-border-radius);
-	border-top-right-radius: var(--odhin-border-radius);
+	background-color: var(--rb-color);
+	color: var(--rb-light-color);
+	border-top-left-radius: var(--rb-border-radius);
+	border-top-right-radius: var(--rb-border-radius);
 	border: 0 !important;
 	padding: 0.4rem 0.6rem;
 }
 .result-header label {
 	padding: 4px 8px;
-	border-radius: var(--odhin-border-radius);
+	border-radius: var(--rb-border-radius);
 }
-.odhin-btn {
-	background-color: var(--odhin-color);
-	border: 1px solid var(--odhin-color);
-	color: var(--odhin-light-color);
+.rb-btn {
+	background-color: var(--rb-color);
+	border: 1px solid var(--rb-color);
+	color: var(--rb-light-color);
 	font-size: 1.2rem;
-	border-radius: var(--odhin-border-radius);
+	border-radius: var(--rb-border-radius);
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -339,17 +339,17 @@ body {
 	transition: all 0.5s;
 	display: inherit;
 }
-.odhin-btn:hover {
-	color: var(--odhin-green-light-color) !important;
-	border: 1px solid var(--odhin-green-light-color) !important;
+.rb-btn:hover {
+	color: var(--rb-green-light-color) !important;
+	border: 1px solid var(--rb-green-light-color) !important;
 }
 .close-btn {
-	color: var(--odhin-color);
-	background-color: var(--odhin-light-color);
-	border: 1px solid var(--odhin-light-color);
+	color: var(--rb-color);
+	background-color: var(--rb-light-color);
+	border: 1px solid var(--rb-light-color);
 	margin-right: 15px;
 	font-size: 1.4rem;
-	border-radius: var(--odhin-border-radius);
+	border-radius: var(--rb-border-radius);
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -357,11 +357,11 @@ body {
 	transition: all 0.5s;
 }
 .download-btn {
-	color: var(--odhin-color);
-	background-color: var(--odhin-light-color);
-	border: 1px solid var(--odhin-color);
+	color: var(--rb-color);
+	background-color: var(--rb-light-color);
+	border: 1px solid var(--rb-color);
 	font-size: 1rem;
-	border-radius: var(--odhin-border-radius);
+	border-radius: var(--rb-border-radius);
 	width: auto;
 	height: 30px;
 	text-align: center;
@@ -371,11 +371,11 @@ body {
 	text-decoration: none;
 }
 .menu-btn {
-	color: var(--odhin-color) !important;
-	background-color: var(--odhin-light-color) !important;
-	border: 1px solid var(--odhin-color) !important;
+	color: var(--rb-color) !important;
+	background-color: var(--rb-light-color) !important;
+	border: 1px solid var(--rb-color) !important;
 	font-size: 1rem;
-	border-radius: var(--odhin-border-radius);
+	border-radius: var(--rb-border-radius);
 	text-align: center;
 	transition: all 0.5s;
 	padding: 2px 10px;
@@ -384,78 +384,78 @@ body {
 .close-btn:hover,
 .download-btn:hover,
 .menu-btn:hover {
-	color: var(--odhin-green-light-color) !important;
-	border: 1px solid var(--odhin-green-light-color) !important;
+	color: var(--rb-green-light-color) !important;
+	border: 1px solid var(--rb-green-light-color) !important;
 	background-color: transparent !important;
 }
 .label-status-passed {
-	background-color: var(--odhin-light-passed-status-color) !important;
-	color: var(--odhin-passed-status-color) !important;
-	border: var(--odhin-passed-status-color) 1px solid !important;
+	background-color: var(--rb-light-passed-status-color) !important;
+	color: var(--rb-passed-status-color) !important;
+	border: var(--rb-passed-status-color) 1px solid !important;
 	margin: 5px 15px !important;
 }
 .label-status-failed {
-	background-color: var(--odhin-light-failed-status-color) !important;
-	color: var(--odhin-failed-status-color) !important;
-	border: var(--odhin-failed-status-color) 1px solid !important;
+	background-color: var(--rb-light-failed-status-color) !important;
+	color: var(--rb-failed-status-color) !important;
+	border: var(--rb-failed-status-color) 1px solid !important;
 	margin: 5px 15px !important;
 }
 .label-status-timedOut {
-	background-color: var(--odhin-light-timedOut-status-color) !important;
-	color: var(--odhin-timedOut-status-color) !important;
-	border: var(--odhin-timedOut-status-color) 1px solid !important;
+	background-color: var(--rb-light-timedOut-status-color) !important;
+	color: var(--rb-timedOut-status-color) !important;
+	border: var(--rb-timedOut-status-color) 1px solid !important;
 	margin: 5px 15px !important;
 }
 .label-status-skipped {
-	background-color: var(--odhin-light-skipped-status-color) !important;
-	color: var(--odhin-skipped-status-color) !important;
-	border: var(--odhin-skipped-status-color) 1px solid !important;
+	background-color: var(--rb-light-skipped-status-color) !important;
+	color: var(--rb-skipped-status-color) !important;
+	border: var(--rb-skipped-status-color) 1px solid !important;
 	margin: 5px 15px !important;
 }
 .label-status-interrupted {
-	background-color: var(--odhin-light-interrupted-status-color) !important;
-	color: var(--odhin-interrupted-status-color) !important;
-	border: var(--odhin-interrupted-status-color) 1px solid !important;
+	background-color: var(--rb-light-interrupted-status-color) !important;
+	color: var(--rb-interrupted-status-color) !important;
+	border: var(--rb-interrupted-status-color) 1px solid !important;
 	margin: 5px 15px !important;
 }
 .result-status-passed {
-	background-color: var(--odhin-light-passed-status-color) !important;
-	color: var(--odhin-passed-status-color) !important;
+	background-color: var(--rb-light-passed-status-color) !important;
+	color: var(--rb-passed-status-color) !important;
 }
 .result-status-failed {
-	background-color: var(--odhin-light-failed-status-color) !important;
-	color: var(--odhin-failed-status-color) !important;
+	background-color: var(--rb-light-failed-status-color) !important;
+	color: var(--rb-failed-status-color) !important;
 }
 .result-status-timedOut {
-	background-color: var(--odhin-light-timedOut-status-color) !important;
-	color: var(--odhin-timedOut-status-color) !important;
+	background-color: var(--rb-light-timedOut-status-color) !important;
+	color: var(--rb-timedOut-status-color) !important;
 }
 .result-status-skipped {
-	background-color: var(--odhin-light-skipped-status-color) !important;
-	color: var(--odhin-skipped-status-color) !important;
+	background-color: var(--rb-light-skipped-status-color) !important;
+	color: var(--rb-skipped-status-color) !important;
 }
 .result-status-interrupted {
-	background-color: var(--odhin-light-interrupted-status-color) !important;
-	color: var(--odhin-interrupted-status-color) !important;
+	background-color: var(--rb-light-interrupted-status-color) !important;
+	color: var(--rb-interrupted-status-color) !important;
 }
 .step-ok {
-	color: var(--odhin-passed-status-color) !important;
+	color: var(--rb-passed-status-color) !important;
 }
 .step-error {
-	color: var(--odhin-failed-status-color) !important;
+	color: var(--rb-failed-status-color) !important;
 }
 
 .step-ok-hover:hover,
 .step-ok-hover:hover > *{
-	color: var(--odhin-passed-status-color) !important;
-	background-color: var(--odhin-light-passed-status-color) !important;
-	border-radius: var(--odhin-border-radius);
+	color: var(--rb-passed-status-color) !important;
+	background-color: var(--rb-light-passed-status-color) !important;
+	border-radius: var(--rb-border-radius);
 }
 .step-error-hover:hover,
 .step-error-hover:hover > *{
-	color: var(--odhin-failed-status-color) !important;
-	background-color: var(--odhin-light-failed-status-color) !important;
-	border-radius: var(--odhin-border-radius);
+	color: var(--rb-failed-status-color) !important;
+	background-color: var(--rb-light-failed-status-color) !important;
+	border-radius: var(--rb-border-radius);
 }
 
 .stepLine {
@@ -470,18 +470,18 @@ body {
 	margin: 0 10px 0 20px !important;
 }
 .pre-line-number {
-	color: var(--odhin-failed-status-color);
+	color: var(--rb-failed-status-color);
 	text-align: right;
 }
 .pre-line-info {
-	color: var(--odhin-passed-status-color);
+	color: var(--rb-passed-status-color);
 }
 .testcase-run-info-table > * > * > * {
 	padding: .3rem !important;
 }
-.odhin-tooltip{
-	background-color: var(--odhin-color) !important;
-	color: var(--odhin-light-color) !important;
+.rb-tooltip{
+	background-color: var(--rb-color) !important;
+	color: var(--rb-light-color) !important;
 	width: fit-content !important;
 }
 
@@ -492,8 +492,8 @@ body {
 .tableFixHead          { overflow: auto; height: 215px;}
 .tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
 .tableFixHead thead th {
-	color: var(--odhin-color);
-	background-color: var(--odhin-white-color);
+	color: var(--rb-color);
+	background-color: var(--rb-white-color);
 }
 
 .website-icon-bottom{
@@ -546,23 +546,23 @@ body {
 .accordion-button:not(.collapsed) {
 	border: 0 !important;
 	border-bottom-color: transparent !important;
-	color: var(--odhin-color);
+	color: var(--rb-color);
 	font-size: 1rem;
-	border-top-left-radius: var(--odhin-border-radius) !important;
-	border-top-right-radius: var(--odhin-border-radius) !important;
+	border-top-left-radius: var(--rb-border-radius) !important;
+	border-top-right-radius: var(--rb-border-radius) !important;
 	text-align: left !important;
-	background-color: var(--odhin-light-color);
+	background-color: var(--rb-light-color);
 	padding: 8px 16px;
 	box-shadow: none;
 }
 .accordion-button.collapsed {
 	border: 0 !important;
 	border-bottom-color: transparent !important;
-	color: var(--odhin-color);
+	color: var(--rb-color);
 	font-size: 1rem;
-	border-radius: var(--odhin-border-radius) !important;
+	border-radius: var(--rb-border-radius) !important;
 	text-align: left !important;
-	background-color: var(--odhin-dark-color);
+	background-color: var(--rb-dark-color);
 	padding: 8px 16px;
 	box-shadow: none;
 }
@@ -581,7 +581,7 @@ body {
 
 .accordion-steps:not(.collapsed) {
 	border: 0 !important;
-	color: var(--odhin-color) !important;
+	color: var(--rb-color) !important;
 	font-size: 1rem !important;
 	text-align: left !important;
 	background-color: transparent !important;
@@ -590,7 +590,7 @@ body {
 }
 .accordion-steps.collapsed {
 	border: 0 !important;
-	color: var(--odhin-color) !important;
+	color: var(--rb-color) !important;
 	font-size: 1rem !important;
 	text-align: left !important;
 	background-color: transparent !important;
@@ -609,7 +609,7 @@ body {
 	overflow-anchor: none;
     transition:color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
 	border: 0 !important;
-	color: var(--odhin-color) !important;
+	color: var(--rb-color) !important;
 	font-size: 1rem !important;
 	text-align: left !important;
 	background-color: transparent !important;
@@ -619,14 +619,14 @@ body {
 }
 
 .modal-content {
-	border: 1px solid var(--odhin-color);
-	background-color: var(--odhin-color);
+	border: 1px solid var(--rb-color);
+	background-color: var(--rb-color);
 }
 .btn {
-	border-radius: var(--odhin-border-radius) !important;
+	border-radius: var(--rb-border-radius) !important;
 }
 .accordion-item {
-	border-radius: var(--odhin-border-radius) !important;
+	border-radius: var(--rb-border-radius) !important;
 }
 .table-sm > :not(caption) > * > * {
 	padding: 0rem;
@@ -634,10 +634,10 @@ body {
 .accordion-body{
 	padding: 10px;
 }
-.accordion-body.odhin-table-no-scroll{
-	padding: 0 0 var(--odhin-border-radius) 0;
+.accordion-body.rb-table-no-scroll{
+	padding: 0 0 var(--rb-border-radius) 0;
 }
-.accordion-body.odhin-table{
+.accordion-body.rb-table{
 	padding: 0;
 	max-height: 215px;
     height: 215px;

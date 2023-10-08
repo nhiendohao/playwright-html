@@ -16,7 +16,7 @@ import { round } from 'lodash';
 import { exec } from 'child_process';
 import util from "node:util";
 
-class OdhinPlaywrightReporter implements Reporter {
+class PlaywrightReporter implements Reporter {
 	private execOptions: ExecOptions;
   	private execInfo: ExecInfo;
 	private totalDuration: number;
@@ -520,7 +520,7 @@ class OdhinPlaywrightReporter implements Reporter {
 			testCaseHtml = testCaseHtml.replaceAll("{{.InfoStartTime}}", testCase.result.startTime.toUTCString());
 			testCaseHtml = testCaseHtml.replaceAll("{{.InfoTotalExecutionTime}}", this.help.convertMsToTime(testCase.result.duration));
 			if(showRetries === true){
-				testCaseHtml = testCaseHtml.replaceAll("{{.InfoRetry}}", "<tr><th class=\"odhin-text\">Retry</th><td class=\"text-secondary-emphasis fst-italic\">"+testCase.result.retry.toString()+"</td></tr>");	
+				testCaseHtml = testCaseHtml.replaceAll("{{.InfoRetry}}", "<tr><th class=\"rb-text\">Retry</th><td class=\"text-secondary-emphasis fst-italic\">"+testCase.result.retry.toString()+"</td></tr>");	
 			} else {
 				testCaseHtml = testCaseHtml.replaceAll("{{.InfoRetry}}", "");	
 			}
@@ -653,5 +653,4 @@ class OdhinPlaywrightReporter implements Reporter {
 	}
 }
 
-export default OdhinPlaywrightReporter;
-
+export default PlaywrightReporter;

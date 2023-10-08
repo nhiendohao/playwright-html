@@ -8,7 +8,7 @@
 	<td class="{{.TDClassesCss}}" >
 		<a
 			href="#"
-			class="odhin-btn"
+			class="rb-btn"
 			data-bs-toggle="modal"
 			data-bs-target="#{{.ModalID}}"
 			onclick="showHideScroll('hide')"
@@ -34,7 +34,7 @@
 							onclick="showHideScroll('show')"
 						>X</span>
 					</div>
-					<div class="modal-body odhin-bg-very-dark">
+					<div class="modal-body rb-bg-very-dark">
 						<div class="container-xxl">
 
 
@@ -53,19 +53,19 @@
 													<div class="table-responsive">
 														<table class="table table-sm table-borderless mb-0 testcase-run-info-table">
 															<tr>
-																<th class="odhin-text">Filename</th>
+																<th class="rb-text">Filename</th>
 																<td class="text-secondary-emphasis fst-italic">{{.InfoFilename}}</td>
 															</tr>
 															<tr>
-																<th class="odhin-text fst-italic">Browser</th>
+																<th class="rb-text fst-italic">Browser</th>
 																<td class="text-secondary-emphasis fst-italic">{{.InfoBrowser}}</td>
 															</tr>
 															<tr>
-																<th class="odhin-text">Execution Start Time</th>
+																<th class="rb-text">Execution Start Time</th>
 																<td class="text-secondary-emphasis fst-italic">{{.InfoStartTime}}</td>
 															</tr>
 															<tr>
-																<th class="odhin-text">Total Execution Time</th>
+																<th class="rb-text">Total Execution Time</th>
 																<td class="text-secondary-emphasis fst-italic">{{.InfoTotalExecutionTime}}</td>
 															</tr>
 															{{.InfoRetry}}

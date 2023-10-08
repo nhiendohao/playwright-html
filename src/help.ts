@@ -166,7 +166,7 @@ class Help {
 	  }
 
 	  printErrors(errors: string, errorCode: string, modalId: string): string{
-		return `<div class="accordion accordion-flush mt-3 mb-3 odhin-card" id="accordionPanelsErros">
+		return `<div class="accordion accordion-flush mt-3 mb-3 rb-card" id="accordionPanelsErros">
 		<div class="accordion-item">
 		<h2 class="accordion-header">
 		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-errors-${modalId}" aria-expanded="true" aria-controls="panel-collapse-errors-${modalId}">
@@ -221,7 +221,7 @@ class Help {
 					</figure>
 					</img-comparison-slider>	 
 					</div></div>
-					<div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card-special">
+					<div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card-special">
 					<a class="download-btn" target="_Blank" download="${expectedFilename}" href="data:image/${expectedFileType};base64,${base64ExpectedImage}">Expected <span 	class="material-icons">file_download</span></a>
 					<a class="download-btn" target="_Blank" download="${actualFilename}" href="data:image/${actualFileType};base64,${base64ActualImage}">Actual <span 	class="material-icons">file_download</span></a>
 					<a class="download-btn" target="_Blank" download="${diffFilename}" href="data:image/${diffFileType};base64,${base64DiffImage}">Diff <span 	class="material-icons">file_download</span></a>
@@ -243,7 +243,7 @@ class Help {
 					</figure>
 					</img-comparison-slider>	 
 					</div></div>
-					<div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card-special">
+					<div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card-special">
 					<a class="download-btn" target="_Blank" download="${expectedFilename}" href="screenshots/${id+"-"+expectedFilename}">Expected <span 	class="material-icons">open_in_new</span></a>
 					<a class="download-btn" target="_Blank" download="${actualFilename}" href="screenshots/${id+"-"+actualFilename}">Actual <span 	class="material-icons">open_in_new</span></a>
 					<a class="download-btn" target="_Blank" download="${diffFilename}" href="screenshots/${id+"-"+diffFilename}">Diff <span 	class="material-icons">open_in_new</span></a>
@@ -263,12 +263,12 @@ class Help {
 		if(base64Image !== ""){	
 			if(this.execOptions.embedAttachments === true){					
 				output = `
-					<div class="row ps-3 pe-3"><div class="col text-center"><img src="data:image/${fileType};base64,${base64Image}" class="img-fluid mt-3" alt="Screenshot"></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card"><a class="download-btn" target="_Blank" download="${filename}" href="data:image/${fileType};base64,${base64Image}">Download <span class="material-icons">file_download</span></a></div></div>`;
+					<div class="row ps-3 pe-3"><div class="col text-center"><img src="data:image/${fileType};base64,${base64Image}" class="img-fluid mt-3" alt="Screenshot"></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card"><a class="download-btn" target="_Blank" download="${filename}" href="data:image/${fileType};base64,${base64Image}">Download <span class="material-icons">file_download</span></a></div></div>`;
 				
 			} else {
 				this.base64ToFile(base64Image, this.execOptions.outputFolder+"/screenshots/"+id+"-"+filename);
 				output = `
-				<div class="row ps-3 pe-3"><div class="col text-center"><img src="screenshots/${id+"-"+filename}" class="img-fluid mt-3" alt="Screenshot"></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card"><a class="download-btn" target="_Blank" download="${filename}" href="screenshots/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
+				<div class="row ps-3 pe-3"><div class="col text-center"><img src="screenshots/${id+"-"+filename}" class="img-fluid mt-3" alt="Screenshot"></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card"><a class="download-btn" target="_Blank" download="${filename}" href="screenshots/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
 			}
 		}
 		
@@ -285,7 +285,7 @@ class Help {
 		</button>
 		</h2>
 		<div id="panel-collapse-screenshots-${modalId}" class="accordion-collapse collapse show">
-		<div class="accordion-body odhin-attachment-body">
+		<div class="accordion-body rb-attachment-body">
 		${screenshots}
 		</div>
 		</div>
@@ -301,11 +301,11 @@ class Help {
 		if(base64Video !== ""){
 			if(this.execOptions.embedAttachments === true){	
 				output = `
-					<div class="row ps-3 pe-3"><div class="col text-center"><video controls style="max-width: 100%" src="data:video/${fileType};base64,${base64Video}" class="object-fit-contain mt-3" autoplay></video></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card-special"><a class="download-btn" target="_Blank" download="${filename}" href="data:video/${fileType};base64,${base64Video}">Download <span class="material-icons">file_download</span></a></div></div>`;
+					<div class="row ps-3 pe-3"><div class="col text-center"><video controls style="max-width: 100%" src="data:video/${fileType};base64,${base64Video}" class="object-fit-contain mt-3" autoplay></video></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card-special"><a class="download-btn" target="_Blank" download="${filename}" href="data:video/${fileType};base64,${base64Video}">Download <span class="material-icons">file_download</span></a></div></div>`;
 			} else {
 				this.base64ToFile(base64Video, this.execOptions.outputFolder+"/videos/"+id+"-"+filename);
 				output = `
-					<div class="row ps-3 pe-3"><div class="col text-center"><video controls style="max-width: 100%" src="videos/${id+"-"+filename}" class="object-fit-contain mt-3" autoplay></video></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card-special"><a class="download-btn" target="_Blank" download="${filename}" href="videos/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
+					<div class="row ps-3 pe-3"><div class="col text-center"><video controls style="max-width: 100%" src="videos/${id+"-"+filename}" class="object-fit-contain mt-3" autoplay></video></div></div><div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card-special"><a class="download-btn" target="_Blank" download="${filename}" href="videos/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
 			}
 		}
 		
@@ -322,7 +322,7 @@ class Help {
 		</button>
 		</h2>
 		<div id="panel-collapse-videos-${modalId}" class="accordion-collapse collapse show">
-		<div class="accordion-body odhin-attachment-body">
+		<div class="accordion-body rb-attachment-body">
 		${videos}
 		</div>
 		</div>
@@ -340,8 +340,8 @@ class Help {
 		</button>
 		</h2>
 		<div id="panel-collapse-stdout-${id}" class="accordion-collapse collapse show">
-		<div class="accordion-body odhin-attachment-body">
-		<div class="row ps-3 pe-3"><div class="col">${stdout}</div></div><div class="row ms-3 me-3"><div class="col text-center odhin-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="stdout.txt" href="data:text/html,${stdout}">Download <span class="material-icons">file_download</span></a></div></div>
+		<div class="accordion-body rb-attachment-body">
+		<div class="row ps-3 pe-3"><div class="col">${stdout}</div></div><div class="row ms-3 me-3"><div class="col text-center rb-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="stdout.txt" href="data:text/html,${stdout}">Download <span class="material-icons">file_download</span></a></div></div>
 		</div>
 		</div>
 		</div>
@@ -358,8 +358,8 @@ class Help {
 		</button>
 		</h2>
 		<div id="panel-collapse-stderr-${id}" class="accordion-collapse collapse show">
-		<div class="accordion-body odhin-attachment-body">
-		<div class="row ps-3 pe-3"><div class="col">${stderr}</div></div><div class="row ms-3 me-3"><div class="col text-center odhin-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="stderr.txt" href="data:text/html,${stderr}">Download <span class="material-icons">file_download</span></a></div></div>
+		<div class="accordion-body rb-attachment-body">
+		<div class="row ps-3 pe-3"><div class="col">${stderr}</div></div><div class="row ms-3 me-3"><div class="col text-center rb-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="stderr.txt" href="data:text/html,${stderr}">Download <span class="material-icons">file_download</span></a></div></div>
 		</div>
 		</div>
 		</div>
@@ -375,11 +375,11 @@ class Help {
 		if(base64trace !== ""){
 			if(this.execOptions.embedAttachments === true){	
 				output = `
-					<div class="row ms-3 me-3 mb-4"><div class="col text-center odhin-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="${filename}" href="data:application/${fileType};base64,${base64trace}">Download <span class="material-icons">file_download</span></a></div></div>`;
+					<div class="row ms-3 me-3 mb-4"><div class="col text-center rb-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="${filename}" href="data:application/${fileType};base64,${base64trace}">Download <span class="material-icons">file_download</span></a></div></div>`;
 			} else {	
 				this.base64ToFile(base64trace, this.execOptions.outputFolder+"/traces/"+id+"-"+filename);
 				output = `
-					<div class="row ms-3 me-3 mb-1"><div class="col text-center odhin-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="${filename}" href="traces/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
+					<div class="row ms-3 me-3 mb-1"><div class="col text-center rb-attachments-buttons-card-no-bottom"><a class="download-btn" target="_Blank" download="${filename}" href="traces/${id+"-"+filename}">Download <span class="material-icons">file_download</span></a></div></div>`;
 			}
 		}
 
@@ -392,7 +392,7 @@ class Help {
 		</button>
 		</h2>
 		<div id="panel-collapse-trace-${id}" class="accordion-collapse collapse show">
-		<div class="accordion-body odhin-attachment-body">
+		<div class="accordion-body rb-attachment-body">
 		${output}
 		</div>
 		</div>
